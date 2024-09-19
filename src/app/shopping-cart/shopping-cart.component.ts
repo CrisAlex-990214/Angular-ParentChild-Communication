@@ -15,8 +15,6 @@ export class ShoppingCartComponent implements OnInit {
   products!: Product[];
   items!: ShoppingCartItem[];
 
-  total!: number;
-
   ngOnInit(): void {
     this.products = [
       {
