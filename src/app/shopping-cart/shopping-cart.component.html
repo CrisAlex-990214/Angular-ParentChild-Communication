@@ -8,7 +8,8 @@
                 </div>
 
                 @for (item of getShoppingCartProducts(); track $index) {
-                <app-shopping-cart-item></app-shopping-cart-item>
+                <app-shopping-cart-item [product]="item" [quantity]="getItemQuantity(item)"
+                    (quantityUpdated)="setItemQuantity(item, $event)"></app-shopping-cart-item>
                 }
             </div>
         </div>

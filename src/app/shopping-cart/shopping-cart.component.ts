@@ -41,4 +41,13 @@ export class ShoppingCartComponent implements OnInit {
     const itemIds = this.items.map(x => x.id);
     return this.products.filter(x => itemIds.includes(x.id));
   }
+
+  getItemQuantity(product: Product): number {
+    return this.items.find(x => x.id === product.id)!.quantity;
+  }
+
+  setItemQuantity(product: Product, quantity: number) {
+    const item = this.items.find(x => x.id === product.id)!;
+    item.quantity = quantity;
+  }
 }
